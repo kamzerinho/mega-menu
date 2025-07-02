@@ -1,1 +1,1 @@
-![Alt text]([https://example.com/path/to/image.png](https://github.com/kamzerinho/mega-menu/blob/main/img.jpg?raw=true))
+![Alt text](https://raw.githubusercontent.com/kamzerinho/mega-menu/refs/heads/main/img.jpg)
