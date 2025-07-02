@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+        <header>
+
+        <nav class="mega-menu-wrapper bg-white shadow-md p-4">
+
+            <div class="relative">
+                <div class="flex flex-row p-[25px] gap-5">
+                    <p class="text-5xl">LOGO</p>
+                    <button id="toggleMenu" class="toggleMenu px-4 py-2 bg-red-600 text-white rounded">
+                        Produkty
+                    </button>
+                </div>
+                <!-- Mega Menu -->
+                <div id="megaMenu"
+                    class="megaMenu absolute left-0 mt-2 w-full bg-white shadow-lg border border-gray-200 hidden z-50 overflow-hidden">
+                    <div class="relative h-full">
+                        <!-- Obrazek tła (opcjonalnie) -->
+                        <img src="" alt="Tło" class="absolute inset-0 w-full h-full object-cover opacity-20 z-0" />
+                        <div class="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-white/60 z-0"></div>
+
+                        <!-- Zawartość -->
+                        <div class="relative z-10 flex h-[400px]">
+
+                            <!-- Lewa kolumna: Kategorie -->
+                            <div class="w-1/4 overflow-y-auto border-r border-gray-200 bg-white/80 backdrop-blur-sm">
+                                <ul class="divide-y divide-gray-100">
+                                    <li class="p-4 hover:bg-gray-100 cursor-pointer">Podnośniki nożycowe</li>
+                                    <li class="p-4 hover:bg-gray-100 cursor-pointer">Podnośniki nożycowe RT</li>
+                                    <li class="p-4 hover:bg-gray-100 cursor-pointer">Podnośniki przegubowe</li>
+                                    <li class="p-4 hover:bg-gray-100 cursor-pointer">Podnośniki teleskopowe</li>
+                                    <li class="p-4 hover:bg-gray-100 cursor-pointer">Podnośniki masztowe pionowe</li>
+                                    <li class="p-4 hover:bg-gray-100 cursor-pointer">Nożycowe podnośniki</li>
+                                    <li class="p-4 hover:bg-gray-100 cursor-pointer">Ładowarki teleskopowe</li>
+                                </ul>
+                            </div>
+
+                            <!-- Prawa kolumna: Obrazki + Dane -->
+                            <div class="w-3/4 flex flex-col justify-between bg-white/70 backdrop-blur-sm">
+
+                                <!-- Górna część: Zdjęcia -->
+                                <div class="flex items-start">
+                                    <!-- Zdjęcie główne -->
+                                    <img src="mega-menu-bg.png"
+                                        alt="Podnośnik 1" class="h-48 2xl:h-64 object-fill" />
+
+                                </div>
+
+                                <!-- Dolna część: Dane + Przyciski -->
+                                <div class="flex justify-between items-center p-6 mt-4">
+
+                                    <!-- Parametry -->
+                                    <div class="flex text-left align-center gap-6">
+                                        <div>
+                                            <div class="text-2xl font-semibold">5.6m</div>
+                                            <div class="text-gray-600 text-sm">Work Height Max.</div>
+                                        </div>
+                                        <div>
+                                            <div class="text-2xl font-semibold">240kg</div>
+                                            <div class="text-gray-600 text-sm">Platform Capacity</div>
+                                        </div>
+                                        <div>
+                                            <div class="text-2xl font-semibold">0.76m</div>
+                                            <div class="text-gray-600 text-sm">Machine Width</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="relative w-[50%] hidden xl:block">
+                                        <img src="side-menu.png"
+                                            alt="Podnośnik 2"
+                                            class="absolute 2xl:top-[-275px] top-[-300px] h-96 2xl:h-80 object-contain z-10" />
+                                    </div>
+
+                                    <!-- Przyciski -->
+                                    <div class="space-y-2 text-right flex flex-col items-center">
+                                        <button class="px-2 py-2 border rounded text-sm hover:bg-gray-100 w-full">
+                                            Find a dealer
+                                        </button>
+                                        <button class="px-2 py-2 border rounded text-sm hover:bg-gray-100 w-full">
+                                            Online Inquiry
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+<script>
+const wrapper = document.querySelector(".mega-menu-wrapper");
+  const toggleBtn = wrapper.querySelector(".toggleMenu");
+  const megaMenu = wrapper.querySelector(".megaMenu");
+
+  toggleBtn.addEventListener("click", () => {
+    megaMenu.classList.toggle("hidden");
+  });
+
+  window.addEventListener("click", (e) => {
+    if (!toggleBtn.contains(e.target) && !megaMenu.contains(e.target)) {
+      megaMenu.classList.add("hidden");
+    }
+  });
+</script>
+</body>
+</html>
