@@ -12,7 +12,7 @@
 
         <nav class="mega-menu-wrapper bg-white shadow-md p-4">
 
-            <div class="relative">
+            <div class="relative max-md:hidden">
                 <div class="flex flex-row p-[25px] gap-5">
                     <p class="text-5xl">LOGO</p>
                     <button id="toggleMenu" class="toggleMenu px-4 py-2 bg-red-600 text-white rounded">
@@ -96,6 +96,31 @@
                     </div>
                 </div>
             </div>
+
+			<div class="md:hidden flex flex-row items-center justify-between justify-between p-4" id="navbar">
+			<p class="text-5xl">LOGO</p>
+  <!-- Hamburger -->
+  				<button id="menu-btn" class="focus:outline-none">
+    				<svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" stroke-width="2"
+         				viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+      						<path d="M4 6h16M4 12h16M4 18h16"/>
+   				 	</svg>
+  				</button>
+			</div>
+
+<!-- Menu mobilne -->
+			<div id="mobile-menu" class="md:hidden hidden flex flex-col bg-white shadow-lg px-4 py-2 space-y-2 text-red-600 text-center">
+				<ul class="list-none divide-y divide-gray-100">
+                                    <li class="p-2 hover:bg-gray-100 cursor-pointer">Podnośniki nożycowe</li>
+                                    <li class="p-2 hover:bg-gray-100 cursor-pointer">Podnośniki nożycowe RT</li>
+                                    <li class="p-2 hover:bg-gray-100 cursor-pointer">Podnośniki przegubowe</li>
+                                    <li class="p-2 hover:bg-gray-100 cursor-pointer">Podnośniki teleskopowe</li>
+                                    <li class="p-2 hover:bg-gray-100 cursor-pointer">Podnośniki masztowe pionowe</li>
+                                    <li class="p-2 hover:bg-gray-100 cursor-pointer">Nożycowe podnośniki</li>
+                                    <li class="p-2 hover:bg-gray-100 cursor-pointer">Ładowarki teleskopowe</li>
+				</ul>
+			</div>
+
         </nav>
     </header>
 <script>
@@ -112,6 +137,15 @@ const wrapper = document.querySelector(".mega-menu-wrapper");
       megaMenu.classList.add("hidden");
     }
   });
+
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  };
 </script>
 </body>
 </html>
